@@ -8,27 +8,27 @@ import { useState } from 'react';
 
 
 export default function HomeScreen() {
-    const naviation = useNavigation();
-
+    const navigation = useNavigation();
     const [cart, setCart] = useState([])
 
     const goToCheckout = () => {
-        naviation.navigate('Checkout', {cart});
-    }
+        navigation.navigate('Checkout', {cart, setCart});
+    };
 
     const addToCart = (item) => {
         setCart([...cart, item])
     };
 
     const products = [
-        { id: 1, name: 'Office Wear', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress1.png') },
-        { id: 2, name: 'Black', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress2.png') },
-        { id: 3, name: 'Church Wear', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress3.png') },
-        { id: 4, name: 'Lamerei', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress4.png') },
-        { id: 5, name: '21WN', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress5.png') },
-        { id: 6, name: 'Lopo', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress6.png') },
-        { id: 7, name: '21WN', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress7.png') },
-        { id: 8, name: 'Lame', description: 'reversible angora cardigan', price: 120, image: require('../assets/dress3.png') },
+        { id: 1, name: 'Office Wear',cartDescription: 'Office wear for your office',  description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress1.png') },
+        { id: 2, name: 'Black', cartDescription: 'Recycle Boucle Knit Cardigan Pink', description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress2.png') },
+        { id: 3, name: 'Church Wear', cartDescription: 'Office wear for your office', description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress3.png') },
+        { id: 4, name: 'Lamerei', cartDescription: 'Recycle Boucle Knit Cardigan Pink', description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress4.png') },
+        { id: 5, name: '21WN', cartDescription: 'Office wear for your office', description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress5.png') },
+        { id: 6, name: 'Lopo', cartDescription: 'Recycle Boucle Knit Cardigan Pink', description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress6.png') },
+        { id: 7, name: '21WN', cartDescription: 'Office wear for your office', description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress7.png') },
+        { id: 8, name: 'Lame', cartDescription: 'Recycle Boucle Knit Cardigan Pink', description: 'reversible angora cardigan', price: '$120', image: require('../assets/dress3.png') },
+        
     ]
 
   return (
