@@ -4,12 +4,13 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, TouchableOpaci
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../CartContext';
 
 
 export default function HomeScreen() {
     const navigation = useNavigation();
-    const [cart, setCart] = useState([])
+    const {cart, setCart} = useContext(CartContext);
 
     const goToCheckout = () => {
         navigation.navigate('Checkout', {cart, setCart});

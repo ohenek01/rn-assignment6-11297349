@@ -1,11 +1,13 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useContext } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { CartContext } from '../CartContext';
 
 export default function Checkout() {
     const route = useRoute();
     const navigation = useNavigation();
-    const { cart, setCart } = route.params;
+    const { cart, setCart } = useContext(CartContext);
 
     const removeFromCart = (index) => {
         const newCart = [...cart];
